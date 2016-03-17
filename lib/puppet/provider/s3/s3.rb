@@ -131,7 +131,7 @@ Puppet::Type.type(:s3).provide(:s3) do
       resp = s3_client.get_object(
           response_target: resource[:path],
           bucket:          bucket,
-          key:             key,
+          key:             key
       )
     rescue Aws::S3::Errors::ServiceError => e
       raise Puppet::Error, "#{e.code}: #{e.message}"
